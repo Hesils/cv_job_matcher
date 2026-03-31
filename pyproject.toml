@@ -1,0 +1,13 @@
+[project]
+name = "cv-job-matcher"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.14"
+dependencies = [
+    "docling==2.82.0",
+    "fastapi==0.135.2",
+    "langchain==1.2.13",
+    "langchain-openai==1.1.12",
+    "pytest==9.0.2",
+    "streamlit==1.55.0",
+]
