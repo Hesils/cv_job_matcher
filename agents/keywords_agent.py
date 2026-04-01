@@ -18,4 +18,4 @@ class KeywordsAgent(BaseAgent):
         )
 
     def execute(self, request: StandardInput, role: str):
-        super().execute(request.model_dump_json(), role)
+        return super().execute(request.model_dump_json(), role)

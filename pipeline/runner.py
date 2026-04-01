@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Optional
 
 from pydantic import BaseModel
@@ -48,11 +49,19 @@ class Runner:
                 curriculum_content=extractor_input.curriculum_content
             )
         ]
-        for agent, query in zip(agents, inputs):
-            self.run_agent(agent, query)
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            futures = [
+                executor.submit(self._run_agent_safe, agent, query)
+                for agent, query in zip(agents, inputs)
+            ]
+
+            for future in as_completed(futures):
+                name, result = future.result()
+                self.output[name] = result
+
         return self.output
 
-
-    def run_agent(self, agent: BaseAgent, query: BaseModel):
+    @staticmethod
+    def _run_agent_safe(agent: BaseAgent, query: BaseModel):
         response = agent.execute(query, "user")
-        getattr(self, "output")[agent.name] = response
+        return agent.name, response

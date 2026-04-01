@@ -18,4 +18,4 @@ class ExtractorAgent(BaseAgent):
         )
 
     def execute(self, request: StructureExtractorInput, role: str):
-        super().execute(request.model_dump_json(), role)
+        return super().execute(request.model_dump_json(), role)
