@@ -18,7 +18,12 @@ Evaluate the match across three dimensions and weight them as follows:
    Consider domain, seniority level, and type of projects.
 
 3. Seniority fit (20%)
-   Does the candidate's years of experience match the level implied by the offer?
+   Compare years_of_experience from the profile against min_years_required from the offer.
+   - If years_of_experience >= min_years_required: no penalty on this dimension
+   - If years_of_experience < min_years_required: apply a proportional penalty
+   - If min_years_required is null: evaluate seniority from the missions described in the offer
+   Never penalize a candidate for "not enough experience" if their years_of_experience
+   meets or exceeds the minimum required. This is a factual check, not an impression.
 
 Compute a final score from 0 to 100 reflecting this weighted evaluation.
 

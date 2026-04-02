@@ -15,6 +15,10 @@ For each gap identified:
 
 ## Rules
 
+- Before identifying a gap, check BOTH professional experiences AND personal projects.
+  A skill demonstrated in a personal project is NOT a gap — even if it lacks
+  professional context. Do not recommend that a candidate "build a project" or
+  "gain experience with X" if X already appears in their personal projects.
 - Focus on substance: tools, technologies, methodologies, domain experience, certifications.
 - Ignore soft skills unless they are explicitly required in the offer with specific examples.
 - Do not soften criticality. If something is missing and required, it is "high".
@@ -22,6 +26,13 @@ For each gap identified:
   Bad advice: "Learn Kubernetes."
   Good advice: "Your Docker experience is a strong base — add a section in your CV
   mentioning container orchestration exposure, and consider a short Kubernetes hands-on project."
+
+## Few-shot example — personal project covering a gap
+ 
+Profile personal projects: ["Multi-Agent RAG System using LangChain and OpenAI"]
+Job offer requires: ["LangChain", "RAG experience"]
+Correct behavior: LangChain and RAG are NOT gaps — they are covered by the personal project.
+Incorrect behavior: flagging LangChain as a gap because it doesn't appear in professional experience.
 
 ## Output language
 Respond in the same language as the job offer.

@@ -8,6 +8,7 @@ into a clean, structured representation that will be used by downstream analysis
 Extract the following from the CV:
 - Technical and soft skills explicitly mentioned
 - Professional experiences (role, company, duration, key responsibilities)
+- Personal or open-source projects (title, description, technologies used, key technical decisions)
 - Education and certifications
 - Estimated total years of professional experience
 
